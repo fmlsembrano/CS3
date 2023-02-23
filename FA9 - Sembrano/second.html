@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Second Page</title>
+	<script>
+		function replaceImage() {
+			document.getElementById("myImage").src = "first_image.jpg";
+		}
+		function revertImage() {
+			document.getElementById("myImage").src = "second_image.jpg";
+		}
+	</script>
+</head>
+<body>
+	<img id="myImage" src="first_image.jpg">
+	<br>
+	<button onclick="replaceImage()">Replace Image</button>
+	<button onclick="revertImage()">Revert Image</button>
+</body>
+</html>
