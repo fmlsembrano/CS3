@@ -35,7 +35,6 @@
 		<button onclick="checkOTP()">Enter the OTP as shown above</button>
     
 		<script>
-			/* This function generates a random 6-digit */
 			function generateOTP() {
 				let digits = '0123456789';
 				let OTP = '';
@@ -44,8 +43,6 @@
 				}
 				document.getElementById('otp').innerHTML = OTP;
 			}
-
-			/* This function checks the entered OTP if it is correct */
 			function checkOTP() {
 				let entOTP = prompt('Enter the given OTP:');
 				let curOTP = document.getElementById('otp').innerHTML;
