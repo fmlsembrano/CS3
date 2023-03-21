@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toss coin</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: navy; 
+            	text-align: center;
+            	font-family: arial;
+                color: white;
+            }
+            button {padding: 10px; background:violet }
+            span {color: yellow}
+            #coin, h5 {color: yellow; }
+            #coin { background: gray; 
+            	width: 25px; 
+                height: 25px;
+                padding: 25px;          
+                border: 5px dashed darkgray;
+                border-radius: 50%;
+                margin: 0 auto;
+                
+            }
+            
+        </style>
+
+	</head>
+	<body onload="getGuess()">
+        <h1> Heads or Tail? </h1>
+        <h2 onclick="getGuess()"> Click here to change your Guess: <span id="guess"> </span></h2>
+        <h2 id="coin" onclick="computerGuess()"> H </span></h2>   
+        <h5> Click on the coin above to randomly change its face and compare with your guess </h5> 
+
+        <script>
+                var cflip;
+           
+            var getGuess = function() {
+                youGuess = prompt("Type if you guess Head and T if you guess Tail","H");
+                youGuess.toUpperCase; 
+                (youGuess != "H" && youGuess != "T") ?	alert("Wrong Input"):
+                    guess.innerHTML = youGuess;
+            }
+
+            function computerGuess(){
+
+            cflip = Math.random(); 
+
+            if (cflip >= 0.5){ 
+                document.getElementById("coin").innerHTML = "H"; 
+                cflip = "H" 
+                if (cflip === youGuess){ 
+                    alert("You have guessed it correctly ^^!")
+                } else{ 
+                    alert("You have guessed it incorrectly ;-;")
+                }
+                } else { 
+                document.getElementById("coin").innerHTML = "T";
+                cflip = "T"
+                
+                if (cflip === youGuess){
+                    alert("You have guessed it correctly ^^!")
+                }else{
+                    alert("You have guessed it incorrectly ;-;")
+                }
+            }
+        }
+        </script>
+	</body>
+</html>
