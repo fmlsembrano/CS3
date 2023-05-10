@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				font-family: Verdana;
+				background-image: url("https://i.pinimg.com/originals/f9/30/92/f93092fb384fa873ed1f5e8015e242a7.gif");
+				padding: 20px;
+			}
+			
+			header {
+				margin: 0 auto;
+				text-align: center;
+				width: 80%;
+				border: 1px solid;
+				padding: 20px;
+				font-size: 24px;
+				color: white;
+				margin-bottom: 20px;
+				border-radius: 10px;
+			}
+
+			form {
+				background-color: white;
+				border-radius: 10px;
+				border-style: solid; 
+				border-width: 2px; 
+				border-color: #575555;
+				padding: 10px 30px 10px 30px;
+				font-size: 15px; 
+				opacity: 70%;
+			}
+			
+			legend {
+				font-size: 35px;
+				margin-bottom: 20px;
+			}
+			
+			label {
+				
+				margin-bottom: 10px;
+				font-weight: bold;
+			}
+			
+			input[type="text"],
+			input[type="password"],
+			input[type="email"],
+			textarea,
+			select {
+				width: 100%;
+				padding: 10px;
+				border-radius: 4px;
+				box-sizing: border-box;
+				margin-bottom: 15px;
+				font-size: 16px;
+			}
+			
+			select {
+				height: 40px;
+			}
+			
+			button[type="submit"],
+			button[type="reset"] {
+				background-color: #4CAF50;
+				color: #fffdd0;
+				border-radius: 4px;
+				padding: 10px 20px;
+				font-size: 16px;
+				cursor: pointer;
+				margin-right: 10px;
+				text-shadow: 3px 3px 3px 3px #292929;
+			}
+			
+			button[type="reset"] {
+				background-color: #f44336;
+			}
+			
+			.error {
+				border: 2px solid red;
+			}
+			
+			.success {
+				border: 2px solid green;
+			}
+			
+			#output {
+				text-align: center;
+				margin-top: 100px;
+				background-image: url("https://i.pinimg.com/originals/d9/89/4b/d9894bfc3b3d8e9356cba14d95b33ebe.gif");
+				background-color: white;
+				border-style: solid; 
+				border-width: 2px; 
+				border-color: #575555;
+				font-size: 15px; 
+				opacity: 70%;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function resetBorder(element) {
+				element.classList.remove("error");
+				element.classList.remove("success");
+			}
+			function validateInput(element) {
+				if (element.value === "") {
+					element.classList.add("error");
+				} else {
+					element.classList.remove("error");
+					element.classList.add("success");
+				}
+			}
+			function onSubmit(){
+				var name = document.getElementById("name").value
+				var username = document.getElementById("uname").value
+				var gender = document.getElementById("gdr").value
+				var password = document.getElementById("pas").value
+				var email = document.getElementById("ema").value
+				var address = document.getElementById("add").value
+				var like = document.getElementById("like").value
+				var output = document.getElementById("output").innerHTML = "<h2>Sign-Up Information:</h2>" +
+				"<p><strong>Name:</strong> " + name + "</p>" +
+				"<p><strong>Username:</strong> " + username + "</p>" +
+				"<p><strong>Gender:</strong> " + gender + "</p>" +
+				"<p><strong>Password:</strong> " + password + "</p>" +
+				"<p><strong>Email:</strong> " + email + "</p>" +
+				"<p><strong>Address:</strong> " + address + "</p>" +
+				"<p><strong>Like:</strong> " + like + "</p>"
+				
+				return false;
+			}
+		</script>
+		
+		<header>
+			Mabuhay! Sign-up if you think you are a god. Mabuhay!
+		</header>
+		<form onsubmit = "return onSubmit()">
+			<fieldset>
+				<legend>Sign-Up Form of the gods:</legend> <br>
+				
+				<label>Name:</label>
+				<input type="text" id="name" required onblur="validateInput(this)"onfocus="resetBorder(this)"></input> <br><br>
+			
+				<label>Godly Name:</label>
+				<input type="text" id="uname" required onblur="validateInput(this)"onfocus="resetBorder(this)"></input> <br><br>
+				
+				<label>Gender:</label>
+				<select id="gdr" required onblur="validateInput(this)"onfocus="resetBorder(this)">
+					<option value="" disabled selected>Select Gender</option>
+					<option>Male</option>
+					<option>Female</option>
+					<option>Prefer Not to Mention</option>
+				</select>
+				<br><br>
+				
+				<label>Password:</label>
+				<input type="password" id="pas" required onblur="validateInput(this)"onfocus="resetBorder(this)"></input> <br><br>
+		
+				<label>Email Address:</label>
+				<input type="email" id="ema" required onblur="validateInput(this)"onfocus="resetBorder(this)"></input> <br><br>
+				
+				<label for="address">Address:</label> <br>
+				<textarea name="address" id="add" required onblur="validateInput(this)"onfocus="resetBorder(this)"></textarea> <br><br>
+				
+				<label for="interest/s">What are your likes, the one:</label> <br>
+				<textarea name="like" id="like" required onblur="validateInput(this)"onfocus="resetBorder(this)"></textarea> <br><br>
+				
+				<button type="submit">Submit</button>
+				<button type="reset">Reset</button>
+			</fieldset>
+		</form>		
+		
+		<div id="output"></div>
+	</body>
+</html>
